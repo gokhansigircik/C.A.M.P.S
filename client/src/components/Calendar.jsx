@@ -165,7 +165,6 @@ export default function Calendar({ setValue, value, setDate, date, setPostedActi
                         })
                     setValue(newValue);
                 }}
-
                 renderInput={(params) => <TextField {...params} fullWidth />}
             // renderDay={(day, _value, DayComponentProps) => {
             //     const isSelected =

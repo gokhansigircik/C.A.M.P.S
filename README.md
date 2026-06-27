@@ -1,40 +1,35 @@
 # C.A.M.P.S
 
-A full stack camp operations platform for managing activities, students, scheduling, counselor context, and checkout flow.
+C.A.M.P.S is a camp registration and operations platform built with React, Java, Spring Boot, and MySQL.
 
-## Product story
+## Product problem
 
-C.A.M.P.S connects strongly with Gokhan's hospitality background because it models a real operations environment: people, schedules, activities, registration, details, and payments. It is the strongest full stack case study in the portfolio because it combines a React client with a Spring Boot and MySQL backend.
+Manual registration creates scattered records, repeated data entry, unclear schedules, and slow follow up. This project turns that workflow into a structured web application with a client interface, backend services, persistent records, activity data, and checkout flow thinking.
 
-## What it demonstrates
+## What it shows
 
 | Area | Evidence |
 | --- | --- |
-| Full stack architecture | React frontend and Spring Boot backend live in one repo. |
-| Product workflow | Users move through welcome, login, dashboard, activity details, creation, editing, and payment screens. |
-| API modeling | Backend controllers, models, repositories, and services organize activity and user data. |
-| UI composition | Calendar, navigation, detail, dashboard, form, and checkout components. |
-| Business thinking | The app models operational tasks a camp or activity business would need. |
+| Full stack architecture | React client, Spring Boot server, MySQL persistence, Maven project structure, and configuration split for local setup. |
+| Operations workflow | Camps, activities, users, schedules, registration details, counselor views, and dashboard style screens. |
+| Backend fundamentals | Controllers, models, repositories, services, application properties, and test configuration. |
+| Product execution | A real business process was translated into a usable software workflow instead of a static demo. |
 
 ## Stack
 
-React, JavaScript, Material UI, React Router, Spring Boot, Java 17, MySQL, JPA, Maven, Stripe SDK.
+React, JavaScript, Java, Spring Boot, Maven, MySQL, Stripe flow structure, CSS.
 
 ## Run locally
 
-### Backend
-
-1. Create a MySQL database named `camps`.
-2. Copy `server/src/main/resources/application-example.properties` to `server/src/main/resources/application.properties`.
-3. Update the database username and password for your machine.
-4. Start the Spring Boot app.
+Start the backend.
 
 ```bash
 cd server
+cp src/main/resources/application-example.properties src/main/resources/application.properties
 ./mvnw spring-boot:run
 ```
 
-### Frontend
+Start the frontend.
 
 ```bash
 cd client
@@ -42,25 +37,20 @@ npm install
 npm start
 ```
 
-## Project structure
+Run backend tests.
 
-```text
-client/src
-├── components
-├── pages
-└── images
-
-server/src/main/java/com/joana/studentsystem
-├── controllers
-├── models
-├── repositories
-└── services
+```bash
+cd server
+./mvnw test
 ```
 
-## Next improvements
+Build the frontend.
 
-1. Add seed data for demo activities and users.
-2. Add API documentation for activity and registration routes.
-3. Add screenshots of the dashboard, calendar, and checkout flow.
-4. Add frontend form validation and backend error response examples.
-5. Add an end to end demo path for a recruiter to review quickly.
+```bash
+cd client
+npm run build
+```
+
+## Hiring signal
+
+This is the strongest full stack project in the profile. It shows how Gokhan approaches software for operations: model the workflow, organize the data, build the interface, connect the backend, and keep the system understandable for future improvement.

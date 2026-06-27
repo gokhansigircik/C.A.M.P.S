@@ -1,5 +1,5 @@
 {
-  "name": "studentfrontend",
+  "name": "camps-operations-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -45,5 +45,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "description": "React client for a camp operations platform with scheduling, registration, dashboard, and payment flow screens.",
+  "author": "Gokhan Sigircik",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gokhansigircik/C.A.M.P.S.git"
   }
 }

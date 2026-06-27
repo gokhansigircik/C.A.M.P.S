@@ -1,11 +1,7 @@
 import { Paper } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import Calendar from "../components/Calendar";
-import wake_boarding from "../images/wake_boarding.jpg";
 import "./styles/calendar.css";
-import surf from "../images/surf.jpg";
-import snow from "../images/snow.jpg";
-import { maxWidth } from "@mui/system";
 
 const numKey = {
   Jan: "01",
@@ -27,16 +23,8 @@ function DashBoard() {
   const [campers, setCampers] = useState("");
   const [value, setValue] = useState(new Date());
   const [postedActivity, setPostedActivity] = useState();
-  const [date, setDate] = useState({
-    date: value.toString().slice(0, 11),
-    activity: "Wake Boarding",
-    photo: wake_boarding,
-  });
+  const selectedDate = value.toString().slice(0, 11);
   const [deleted, setDeleted] = useState(false)
-
-  const handleChange = (date) => {
-    setDate(date);
-  };
 
   const handleDelete = (id) => {
     fetch(`http://localhost:8080/activity/delete/${id}`, { method: "POST", headers: { "Content-Type": "application/json" } })
@@ -214,12 +202,12 @@ function DashBoard() {
                       className="d-flex justify-content-between lign-items-center w-75"
                       style={{ margin: "0 auto" }}
                     >
-                      <a href="#">
+                      <span className="text-primary">
                         <h4>
                           {camper.first_name.charAt(0).toUpperCase() +
                             camper.first_name.slice(1)}
                         </h4>
-                      </a>
+                      </span>
                       <p>{camper.city}</p>
                     </div>
                   );
@@ -234,10 +222,9 @@ function DashBoard() {
         >
           <Paper className="calendar border border-dark">
             <Calendar
-              setDate={setDate}
               value={value}
               setValue={setValue}
-              date={date}
+              selectedDate={selectedDate}
               setPostedActivity={setPostedActivity}
             />
           </Paper>

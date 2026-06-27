@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import beach from "../images/beach.jpg";
-import surfboard from "../images/surfboards.jpg";
 import { useParams } from "react-router-dom";
 
 function MoreInfo() {
